@@ -7,12 +7,9 @@ my $index = binary_search(\@array, $word);
 # $word is the target word
 # the binary_search() sub will return the index of the word in the array.
 
-
-
-
 sub binary_search{
     my ($array, $word) = @;
-    my ($low, $high) = (0, @$array - 1); #have not seen this @$array
+    my ($low, $high) = (0, @$array - 1); #have not seen this @$array --> the $ just dereferences the the scalar .. then assiging an array to the scalar will reutn the number of elements in the array
     my $try;
 
     while($low <= $high){
@@ -23,5 +20,6 @@ sub binary_search{
 
         return $try;
     }
-    return undef; # I guess this would return undef .. ? --> an empty return will return a list ; but this will return a sclar
+    return undef; # I guess this would return undef .. ? --> an empty return will return a list ; but this will return a scalar
+    #--> ok seems doing a return undef is not encouraged. .. mostly so if you are returning to an array; empty array vs an array with undef.
 }
