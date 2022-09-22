@@ -22,7 +22,7 @@ sub new {
 
 sub country {
 
-    my ($self, $new_data);
+    my ($self, $new_data) = @_;
 
     if (defined $new_data && ref $new_data eq '') {
         $self->{country} = $new_data;
